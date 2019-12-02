@@ -1,1 +1,5 @@
 # VoiceSwapping
+The aim of our project is to swap voices of two speakers, for example, speaker1 says "Hello world" and speaker2 says "Hello Python", we aim to generate utterances "Hello Python" in the voice and tone of speaker1 and "hello world" in the voice and tone of speaker2.
+When given two utterances of two speakers, two transcripts will be recognized by speech recognition model. Meanwhile, speaker encoder will generate embeddings of these two speaker. The synthesizer will generate log spectrogram when given text1 and text2 but conditioned on embedding2 and embedding1 respectively. After the generation process of vocoder, we can get two utterances which sounds like two speakers' voice has been swapped.
+For the speech recognition part, we utilized an open source sequence-to-sequence toolkit provided by NVIDIA https://github.com/NVIDIA/OpenSeq2Seq, which consists of enormous seqeucne-to-sequence open source blocks and models.
+For the text-to-speech part, we utilized a pretrained model from https://github.com/CorentinJ/Real-Time-Voice-Cloning.
